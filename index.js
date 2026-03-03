@@ -58,8 +58,16 @@ function handleLikeClick(tweetId){
         
     })[0]
 
-    targetObj.likes++
-    console.log(targetObj)
+    if (!targetObj.isLiked){
+        targetObj.likes++
+        
+
+    }else{
+        targetObj.likes--
+    }
+    render()
+    targetObj.isLiked = !targetObj.isLiked
+    
 
 
 }
